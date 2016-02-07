@@ -16,10 +16,10 @@ class GameType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('pretender')
-            ->add('planGeneral')
+            ->add('pretender', null, ['attr' => ['class' => 'tinymce']])
+            ->add('planGeneral', null, ['attr' => ['class' => 'tinymce']])
             ->add('map')
-            ->add('planResearch')
+            ->add('planResearch', null, ['attr' => ['class' => 'tinymce']])
             ->add('winner')
             ->add('serverLink')
             ->add('thread');

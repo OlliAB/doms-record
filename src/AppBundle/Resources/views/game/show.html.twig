@@ -18,13 +18,13 @@
             {% if game.planGeneral %}
             <tr>
                 <th>General Plan</th>
-                <td>{{ game.planGeneral }}</td>
+                <td>{{ game.planGeneral|raw }}</td>
             </tr>
             {% endif %}
             {% if game.planResearch %}
             <tr>
                 <th>Plan of Research</th>
-                <td>{{ game.planResearch }}</td>
+                <td>{{ game.planResearch|raw }}</td>
             </tr>
             {% endif %}
             {% if game.winner %}

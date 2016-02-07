@@ -1,9 +1,9 @@
-/*header menu*/
+/************  header menu*/
 .login-menu a{
     margin-left: 100px;
 }
 
-/*add/edit turn*/
+/************  add/edit turn*/
 #turn > div {
     width: 600px;
 }
@@ -27,12 +27,12 @@
 
 }
 
-/*#new game form*/
+/************ #new game form*/
 .nage_Early, .nage_Middle, .nage_Late {
     display: none;
 }
 
-/*homepage*/
+/************ homepage*/
 
 .myTableStyle thead {
     color: green;
