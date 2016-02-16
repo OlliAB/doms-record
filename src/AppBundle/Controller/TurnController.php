@@ -36,6 +36,7 @@ class TurnController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $turn->setUpdatedAt(new \DateTime());
             $em = $this->getDoctrine()->getManager();
             $em->persist($turn);
             $em->flush();
