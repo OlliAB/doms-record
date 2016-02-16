@@ -32,6 +32,18 @@
     display: none;
 }
 
+.long {
+    width: 500px;
+}
+
+#game > div {
+    margin-bottom: 5px;
+}
+
+.blue{
+    color: blue;
+}
+
 /************ homepage*/
 
 .myTableStyle thead {
@@ -53,10 +65,9 @@
 }
 
 .myTableStyle {
-    /*margin-left: 300px;*/
     width: 100%;
 }
 
-table.center{
+.center, table.center{
     text-align: center;
 }

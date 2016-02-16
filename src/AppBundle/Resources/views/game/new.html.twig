@@ -2,11 +2,47 @@
 
 {% block body %}
 
-<h1>Game creation</h1>
-{{ form_start(form) }}
-{{ form_widget(form) }}
+<link rel="stylesheet" href="{{app.request.getSchemeAndHttpHost()}}/css/tooltipster.css">
+{#<link rel="stylesheet" href="{{app.request.getSchemeAndHttpHost()}}/css/tooltipster-noir.css">#}
+{#<link rel="stylesheet" href="{{app.request.getSchemeAndHttpHost()}}/css/tooltipster-shadow.css">#}
+<link rel="stylesheet" href="{{app.request.getSchemeAndHttpHost()}}/css/tooltipster-light.css">
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="{{app.request.getSchemeAndHttpHost()}}/js/jquery.tooltipster.min.js"></script>
+
+<h1 title="tooltip" class="tooltip">New game</h1>
+{{ form_start(form, {'attr': {'id': 'game'}}) }}
+<div>{{ form_label(form.map) }}</div><div>{{ form_widget(form.map) }}</div>
+<div>{{ form_label(form.age) }}</div><div>{{ form_widget(form.age) }}</div>
+<div>{{ form_label(form.nation) }}</div><div>{{ form_widget(form.nation) }}</div>
+<div>{{ form_label(form.pretender) }}</div><div>{{ form_widget(form.pretender) }}</div>
+<div>{{ form_label(form.thread) }}</div><div>{{ form_widget(form.thread) }}</div>
+<div>{{ form_label(form.serverLink) }}</div><div>{{ form_widget(form.serverLink) }}</div>
+<div>{{ form_label(form.winner) }}</div><div>{{ form_widget(form.winner) }}</div>
+
+<div>{{ form_label(form.planGeneral) }}
+    <label class="tooltip blue" title="1. Expand by Centaur Warriors.<br/>
+2. Utilize seducing dryads.<br/>
+3. Run into Centaur Hierophant thugs.<br/>
+4. Capture some poor neighbor capital.<br/>
+5. Snowball and eventually conquer everyone in middle game: in late game we are weak.">(sample)</label> {{ form_widget(form.planGeneral) }}</div>
+<div>{{ form_label(form.planResearch) }}
+
+    <label class="tooltip blue"  title="
+    <b>Alteration3</b> for Ironskin.<br/>
+    <b>Construction4</b> for frostbrands and vine shields.<br/>
+    <b>Alteration5</b> for Mother Oak.<br/>
+    <b>Thaumaturgy5</b> for Growing Fury.<br/>
+    <b>Blood1</b> for Reinvigoration.<br/>
+    High <b>Alteration</b> for Mass Protection.<br/>
+    High <b>Enchantment</b> for Mass Regeneration.<br/>
+    High <b>Conjuration</b> to diversify magic">(sample)</label>
+
+
+    {{ form_widget(form.planResearch) }}</div>
+{#{{ form_widget(form) }}#}
 <input type="submit" value="Create"/>
-{{ form_end(form) }}
+<div>{{ form_end(form) }}</div>
 
 <ul>
     <li>
@@ -21,4 +57,5 @@
 {% endfor %}
 
 {{ tinymce_init({'theme': {'simple': {'menubar': false, 'statusbar': false} }, width: "300", }) }}
+
 {% endblock %}
