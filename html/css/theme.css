@@ -8,6 +8,14 @@
     width: 600px;
 }
 
+form > div{
+    margin-bottom: 5px;
+}
+
+form > .separate-top {
+    margin-top: 25px;
+}
+
 #turn label{
     font-weight: bold;
     /*margin-left: 250px;*/
@@ -24,7 +32,16 @@
 
 .post-shared input{
     width: 600px;
+}
 
+.tinymce-short{
+    width: 60%;
+}
+
+/* show turn form */
+
+.ul-separated li{
+    margin-top: 20px;
 }
 
 /************ #new game form*/
@@ -70,4 +87,16 @@
 
 .center, table.center{
     text-align: center;
+}
+
+#container{
+    padding-top: 150px;
+}
+
+#container h1, #container h3{
+    text-align: center;
+}
+
+.underline{
+    text-decoration: underline;
 }

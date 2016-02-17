@@ -1,32 +1,25 @@
 {% extends 'AppBundle::base.html.twig' %}
 
 {% block body %}
+
+<link rel="stylesheet" href="{{app.request.getSchemeAndHttpHost()}}/css/tooltipster.css">
+<link rel="stylesheet" href="{{app.request.getSchemeAndHttpHost()}}/css/tooltipster-light.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="{{app.request.getSchemeAndHttpHost()}}/js/jquery.tooltipster.min.js"></script>
+
 <div id="wrapper">
     <div id="container">
-        <div id="welcome">
-            <h1 style="text-align: center"><span>Home page</h1>
-        </div>
-
         {% if app.user %}
         {% include 'AppBundle:home:_nations.html.twig' %}
         {% else %}
-        <div style="display:block; margin-top: 0px; text-align: center;">
-            <strong>Nations list:</strong>
-        </div>
 
-        <div style="display:block; margin-top: 0px; text-align: center;">
-            {% set old = 'old' %}
-            {% for nation in nations %}
+        <h1>Logging, Planning, Private Sharing and Saving Dominions 4 game turns.</h1>
 
-            {% if nation.age != old %}
-            <br/><br/>{{ nation.age }} Age:<br/><br/>
-            {% set old = nation.age %}
-            {% endif %}
+        <h3><span class="underline">Log</span> games and turns to ease game review and <span class="tooltip blue" title="After action report: report about finished game.">AAR</span> creation.</h3>
+        <h3><span class="underline">Plan</span> the game ahead.</h3>
+        <h3><span class="underline">Share</span> turns and plans with friends.</h3>
+        <h3><span class="underline">Upload</span> game turn files to <span class="tooltip blue" title="To check something in past turns.">travel in game time back</span> and forth.</h3>
 
-            {{ nation.name }}
-
-            {% endfor %}
-        </div>
         {% endif %}
     </div>
 </div>

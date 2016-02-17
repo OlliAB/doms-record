@@ -1,12 +1,60 @@
 {% extends 'AppBundle::base.html.twig' %}
 
 {% block body %}
+
+<link rel="stylesheet" href="{{app.request.getSchemeAndHttpHost()}}/css/tooltipster.css">
+<link rel="stylesheet" href="{{app.request.getSchemeAndHttpHost()}}/css/tooltipster-light.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="{{app.request.getSchemeAndHttpHost()}}/js/jquery.tooltipster.min.js"></script>
+
     <h1>Turn creation of {{ turn.game }} game</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+<div class="separate-top">Turn Number:</div><div>{{ form_widget(form.number) }}</div>
+
+<div class="separate-top">Results the Turn brought:
+<label class="tooltip blue" title="Conquered provinces #10, #20 and #33<br/>
+Won battle vs Ulm at #33: lost 2 mages and 10 Centaur Warriors while enemy lost 50 warriors and 20 archers.<br/>
+Traded <b>Earth Hammer</b> for 17 death gems.<br/>
+Found <b>D2F3</b> sites.<br/>
+Got 2k gold and <b>Lightless Lantern</b> from random events.">(sample)</label></div>
+<div class="tinymce-short">{{ form_widget(form.result) }}</div>
+
+<div class="separate-top">Ideas about game situation on this Turn:
+<label class="tooltip blue" title="We should expand Under Water now with <b>Rings of Underwater Breathing.</b><br/>
+Mictlan is no longer threat, it is time for peaceful propositions now.<br/>
+Let's stab Marverni by sneaking Revellers now.">(sample)</label></div>
+</div><div class="tinymce-short">{{ form_widget(form.idea) }}</div>
+
+<div class="separate-top">Planned sequence of actions for next Turns:
+<label class="tooltip blue" title="This turn 31 forge 4 <b>Rings of Underwater Breathing.</b><br/>
+Turn 32 Next turn Centaur Thugs wear rings and attack #2, #4 and #6 provinces UW. <br/>
+Turn 33 Revellers under command of dryads come to #11 border province<br/>
+Turn 34 Revellers attack #12 and #13 provinces of Marverni to take initiative.">(sample)</label></div>
+</div><div class="tinymce-short">{{ form_widget(form.plan) }}</div>
+
+<div class="separate-top">Actions of this Turn:
+<label class="tooltip blue" title="Forge 4 <b>Rings of Underwater Breathing.</b><br/>
+Propose to Mictlan peace treaty: they pay 1k gold in exchange for NAP-10<br/>
+Forge two frost brands and two vine shields. <br/>
+Build temple at #15 to fix dominion.<br/>
+Attack #77 of Caelum.">(sample)</label></div>
+</div><div class="tinymce-short">{{ form_widget(form.action) }}</div>
+
+<div class="separate-top">{{ form_label(form.shareLink) }}
+<label class="tooltip blue" title="Share link for this Turn to friend to discuss it:">(help)</label></div>
+</div><div class="tinymce-short">{{ form_widget(form.shareLink) }}</div>
+
+<div class="separate-top">{{ form_label(form.turnInFile) }}
+<label class="tooltip blue" title="Upload .2h file.">(help)</label></div>
+</div><div class="tinymce-short">{{ form_widget(form.turnInFile) }}</div>
+
+<div class="separate-top">{{ form_label(form.turnOutFile) }}
+<label class="tooltip blue" title="Upload .trn file.">(help)</label></div>
+</div><div class="tinymce-short">{{ form_widget(form.turnOutFile) }}</div>
+
+<div  class="separate-top"><input type="submit" value="Create Turn" /></div>
+{{ form_end(form) }}
 
     <ul>
         <li>

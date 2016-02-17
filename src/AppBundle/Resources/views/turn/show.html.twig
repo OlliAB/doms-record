@@ -3,9 +3,12 @@
 {% block body %}
     {% include 'AppBundle:turn:_turn.html.twig' %}
 
-    <ul>
+    <ul class="ul-separated">
         <li>
             <a href="{{ path('turn_edit', { 'id': turn.id }) }}">Edit turn</a>
+        </li>
+        <li>
+            <a href="{{ path('turn_new', { 'id': turn.game.id }) }}">Add turn</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
